@@ -139,3 +139,7 @@ mapping -> portfolio stress test -> dashboard.
 Not built (explicitly out of scope this phase): Module A (tactical
 rebalancing), VaR, reverse stress testing, advanced derivatives
 pricing, Docker/distributed infrastructure.
+
+## Reference: https://chatgpt.com/c/6ac75dbf-a22c-83e8-9dda-2406ec0561f2 
+## https://claude.ai/chat/4722a3a2-0e05-4504-8f91-d22b3bbc51e4
+
