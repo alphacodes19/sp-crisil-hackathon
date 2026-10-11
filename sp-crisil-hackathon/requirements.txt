@@ -1,0 +1,26 @@
+pydantic>=2.6
+requests>=2.31
+pytest>=8.0
+
+# API layer (src/api/main.py). Lightweight - no ML dependency; the API
+# only reads already-persisted data/signals.jsonl.
+fastapi>=0.110
+uvicorn[standard]>=0.29
+httpx>=0.27  # needed for FastAPI's TestClient, used by tests/test_api.py
+
+# Module B dashboard (dashboard/app.py). Lightweight - no ML dependency;
+# the dashboard only reads already-persisted signals + the synthetic
+# portfolio/scenario library and runs src/stress/stress_engine.py's
+# pure-Python math.
+streamlit>=1.38
+plotly>=5.22
+
+# Needed only for real FinBERT / zero-shot inference (SentimentAnalyzer's
+# and EventClassifier's default pipelines, and scripts/verify_finbert.py
+# / scripts/generate_replay_signals.py run against real models). NOT
+# required to run the unit test suite - tests inject mocked inference
+# functions instead, so `transformers`/`torch` need not be installed
+# just to run `pytest`. Heavy (torch especially); install only when you
+# actually need live inference.
+transformers>=4.40
+torch>=2.2
